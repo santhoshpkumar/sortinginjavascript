@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Algorithms: Fun Learning and Sharing App</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand em-text" href="index.html">Algorithms</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Sorting</a></li>
+            <!--<li><a href="bubble.html">Bubble</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Sorting <span class="em-text">Simplified</span></h1>
+            <p>A fun and easy way to learn & understand sorting algorithms</p>
+            <!--<a href="#"><img class="app-btn" src="img/icon_app_store.png"></a>-->
+            <!--<a href="#"><img class="app-btn" src="img/icon_google_play.png"></a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-4">
+            <h2>Comparison Based Sorting Algorithms</h2>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Basic </h2>
+            <div class="list-group">
+              <a href="#bubblesort" class="list-group-item">Bubble Sort</a>
+              <a href="#selectionsort" class="list-group-item">Selection Sort</a>
+              <a href="#insertionsort" class="list-group-item">Insertion Sort</a>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+            <h2>Advanced </h2>
+            <a href="#shellsort" class="list-group-item">Shell Sort</a>
+            <a href="#" class="disabled list-group-item">Merge Sort</a>
+            <a href="#" class="disabled list-group-item">Quick Sort</a>
+            <a href="#" class="disabled list-group-item">Heap Sort</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id = "bubblesort">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Bubble Sort </h2>
+            <p>It is one of the most inefficient sorting algorithm. It compares adjacent items and swaps them if they are in the wrong order.
+            Because of the adjacent comparison and swaps the item bubbles to its correct position and hence the name. </p>
+          </div></div>
+        <div class="row">
+          <div class="col-md-5">
+            <ul>
+              <li> O(n^2) average case performance  </li>
+              <li> O(n^2) worst case performance </li>
+              <li> O(n) best case performance </li>
+              <li> O(1) auxiliary worst case space complexity </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-md-offset-2">
+            <p>Modified Bubble Sort: Exit the comparison once the entire list is traversed and there were no swaps during that traversal,
+              which indicates that the array is sorted.</p>
+          </div>
+        </div>
+        <!--<a href="#" class="btn btn-default">Read More</a>-->
+      </div>
+    </section>
+    <section >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div id="graphBubbleSort" class="wrapper">
+              <canvas id='canvasBubbleSort' style = 'position: relative; left: 0px; top: 0px;' >
+              </canvas>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3>Bubble Sort Animation</h3>
+            <p>
+              <button class="btn btn-large btn-default" id="btnBubbleReset"><span class="glyphicon glyphicon-fast-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnBubblePrev"><span class="glyphicon glyphicon-step-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnBubblePause"><span class="glyphicon glyphicon-pause"></span></button>
+              <button class="btn btn-large btn-default" id="btnBubblePlay"><span class="glyphicon glyphicon-play"></span></button>
+              <button class="btn btn-large btn-default" id="btnBubbleNext"><span class="glyphicon glyphicon-step-forward"></span></button>
+              <button class="btn btn-large btn-default" id="btnBubbleFin"><span class="glyphicon glyphicon-fast-forward"></span></button>
+            </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnBubbleRandom">
+                <span class="glyphicon glyphicon-random "> Randomize </span>
+              </button>
+              </p>
+            </p><p>
+              <button class="btn btn-large btn-default" id="btnBubbleLess"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <button class="btn btn-large btn-default disabled" id="btnBubbleNoOfItems"> 20 </button>
+              <button class="btn btn-large btn-default" id="btnBubbleMore"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              No of Items
+            </p><p>
+              <button class="btn btn-large btn-default" id="btnBubbleDec"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <a class="btn btn-large btn-default disabled" id="btnBubbleMaxValue"> 80 </a>
+              <button class="btn btn-large btn-default" id="btnBubbleInc"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              Max value of an Item
+            </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnBubbleSlow"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <a class="btn btn-large btn-default disabled" id="btnBubbleSpeed"> 03 </a>
+              <button class="btn btn-large btn-default" id="btnBubbleFast"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              Animation Speed
+            </p>
+              <!--<a class="btn btn-primary btn-cyan btn-large">Learn more</a>-->
+              <!--<a class="btn btn-primary btn-cyan btn-large">Logic tracer</a>-->
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="feature" id = "selectionsort">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Selection Sort </h2>
+            <p>Selection sort breaks the arrays into 2 selections, one on the left that is sorted and one on the right unsorted. To begin with the entire list is unsorted. Pick the left most item and compare it with rest of the item and swap it with the left most if item is in wrong order. The left side of the selections gets sorted as we iterate through the list.
+              We are left with sorted list once all the elements towards the right are exhausted. </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <ul>
+              <li> O(n^2) average case performance  </li>
+              <li> O(n^2) worst case performance </li>
+              <li> O(n^2) best case performance </li>
+              <li> O(n) total, O(1) auxiliary worst case space complexity </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-md-offset-2">
+          </div>
+        </div>
+        <!--<a href="#" class="btn btn-default">Read More</a>-->
+      </div>
+    </section>
+    <section >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div id="graphSelectionSort" class="wrapper">
+              <canvas id='canvasSelectionSort' style = 'position: relative; left: 0px; top: 0px;' >
+              </canvas>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3>Selection Sort Animation</h3>
+            <p>
+              <button class="btn btn-large btn-default" id="btnSelectionReset"><span class="glyphicon glyphicon-fast-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnSelectionPrev"><span class="glyphicon glyphicon-step-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnSelectionPause"><span class="glyphicon glyphicon-pause"></span></button>
+              <button class="btn btn-large btn-default" id="btnSelectionPlay"><span class="glyphicon glyphicon-play"></span></button>
+              <button class="btn btn-large btn-default" id="btnSelectionNext"><span class="glyphicon glyphicon-step-forward"></span></button>
+              <button class="btn btn-large btn-default" id="btnSelectionFin"><span class="glyphicon glyphicon-fast-forward"></span></button>
+            </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnSelectionRandom"><span class="glyphicon glyphicon-random "> Randomize </span></button>
+            </p>
+            </p><p>
+            <button class="btn btn-large btn-default" id="btnSelectionLess"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+            <a class="btn btn-large btn-default disabled" id="btnSelectionNoOfItems"> 20 </a>
+            <button class="btn btn-large btn-default" id="btnSelectionMore"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+            No of Items
+            </p><p>
+              <button class="btn btn-large btn-default" id="btnSelectionDec"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <a class="btn btn-large btn-default disabled" id="btnSelectionMaxValue"> 80 </a>
+              <button class="btn btn-large btn-default" id="btnSelectionInc"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              Max value of an Item
+            </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnSelectionSlow"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <button class="btn btn-large btn-default disabled" id="btnSelectionSpeed"> 03 </button>
+              <button class="btn btn-large btn-default" id="btnSelectionFast"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              Animation Speed
+            </p>
+            <!--<a class="btn btn-primary btn-cyan btn-large">Learn more</a>-->
+            <!--<a class="btn btn-primary btn-cyan btn-large">Logic tracer</a>-->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feature" id = "insertionsort">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Insertion Sort</h2>
+            <p>This logic is closet to the way we humans sort. It breaks the list into two section. The left sorted and the right unsorted.
+              Similar to selection sort it picks each untouched element in right and instead of comparing to the rest of items in the right,
+              it places the picked item in the correct spot in the left. To begin with the left will be blank and the right will be the entire unsorted array.
+              Pick each item in right compare against the left and place it in the correct sorted order.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <ul>
+              <li> O(n^2) average case performance  </li>
+              <li> O(n^2) worst case performance </li>
+              <li> O(n) comparison O(1) swap best case performance </li>
+              <li> O(n) total, O(1) auxiliary worst case space complexity </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-md-offset-2">
+            <p>This is efficient when the sort data is small.
+              In fact most of the library (Java, C++, Javascript) switch to use insertion sort for smaller list items,
+              because of its in-place sort capability. It is ineffective for larger list items.</p>
+          </div>
+        </div>
+        <!--<a href="#" class="btn btn-default">Read More</a>-->
+      </div>
+    </section>
+    <section >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div id="graphInsertionSort" class="wrapper">
+              <canvas id='canvasInsertionSort' style = 'position: relative; left: 0px; top: 0px;' >
+              </canvas>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3>Insertion Sort Animation</h3>
+            <p>
+              <button class="btn btn-large btn-default" id="btnInsertionReset"><span class="glyphicon glyphicon-fast-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnInsertionPrev"><span class="glyphicon glyphicon-step-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnInsertionPause"><span class="glyphicon glyphicon-pause"></span></button>
+              <button class="btn btn-large btn-default" id="btnInsertionPlay"><span class="glyphicon glyphicon-play"></span></button>
+              <button class="btn btn-large btn-default" id="btnInsertionNext"><span class="glyphicon glyphicon-step-forward"></span></button>
+              <button class="btn btn-large btn-default" id="btnInsertionFin"><span class="glyphicon glyphicon-fast-forward"></span></button>
+            </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnInsertionRandom"><span class="glyphicon glyphicon-random "> Randomize </span></button>
+            </p>
+            </p><p>
+            <button class="btn btn-large btn-default" id="btnInsertionLess"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+            <a class="btn btn-large btn-default disabled" id="btnInsertionNoOfItems"> 20 </a>
+            <button class="btn btn-large btn-default" id="btnInsertionMore"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+            No of Items
+          </p><p>
+            <button class="btn btn-large btn-default" id="btnInsertionDec"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+            <a class="btn btn-large btn-default disabled" id="btnInsertionMaxValue"> 80 </a>
+            <button class="btn btn-large btn-default" id="btnInsertionInc"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+            Max value of an Item
+          </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnInsertionSlow"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <button class="btn btn-large btn-default disabled" id="btnInsertionSpeed"> 03 </button>
+              <button class="btn btn-large btn-default" id="btnInsertionFast"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              Animation Speed
+            </p>
+            <!--<a class="btn btn-primary btn-cyan btn-large">Learn more</a>-->
+            <!--<a class="btn btn-primary btn-cyan btn-large">Logic tracer</a>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO  -->
+    <section class="feature" id = "shellsort">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Shell Sort</h2>
+            <p>This is improvement to insertion sort. In insertion sort the gap between the comparison is one,
+              here we perform insertion sort on the sub-list of varying and decreasing gap.
+              When the gap becomes 1 then the array is finally sorted as regular insertion sort.
+              The advantage of using gaps is that the values get distributed so that the small items towards the end gets swapped forward early on.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <ul>
+              <li> O(n^3/2) | O(n^4/3) average case performance  </li>
+              <li> O(n^2) worst case performance </li>
+            </ul>
+          </div>
+        </div>
+        <!--<a href="#" class="btn btn-default">Read More</a>-->
+      </div>
+    </section>
+    <section >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div id="graphShellSort" class="wrapper">
+              <canvas id='canvasShellSort' style = 'position: relative; left: 0px; top: 0px;' >
+              </canvas>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h3>Shell Sort Animation</h3>
+            <p>
+              <button class="btn btn-large btn-default" id="btnShellReset"><span class="glyphicon glyphicon-fast-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnShellPrev"><span class="glyphicon glyphicon-step-backward"></span></button>
+              <button class="btn btn-large btn-default" id="btnShellPause"><span class="glyphicon glyphicon-pause"></span></button>
+              <button class="btn btn-large btn-default" id="btnShellPlay"><span class="glyphicon glyphicon-play"></span></button>
+              <button class="btn btn-large btn-default" id="btnShellNext"><span class="glyphicon glyphicon-step-forward"></span></button>
+              <button class="btn btn-large btn-default" id="btnShellFin"><span class="glyphicon glyphicon-fast-forward"></span></button>
+            </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnShellRandom"><span class="glyphicon glyphicon-random "> Randomize </span></button>
+            </p>
+            </p><p>
+            <button class="btn btn-large btn-default" id="btnShellLess"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+            <a class="btn btn-large btn-default disabled" id="btnShellNoOfItems"> 20 </a>
+            <button class="btn btn-large btn-default" id="btnShellMore"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+            No of Items
+          </p><p>
+            <button class="btn btn-large btn-default" id="btnShellDec"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+            <a class="btn btn-large btn-default disabled" id="btnShellMaxValue"> 80 </a>
+            <button class="btn btn-large btn-default" id="btnShellInc"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+            Max value of an Item
+          </p>
+            <p>
+              <button class="btn btn-large btn-default" id="btnShellSlow"><span class="glyphicon glyphicon glyphicon-minus"></span></button>
+              <button class="btn btn-large btn-default disabled" id="btnShellSpeed"> 03 </button>
+              <button class="btn btn-large btn-default" id="btnShellFast"><span class="glyphicon glyphicon glyphicon-plus"></span></button>
+              Animation Speed
+            </p>
+            <!--<a class="btn btn-primary btn-cyan btn-large">Learn more</a>-->
+            <!--<a class="btn btn-primary btn-cyan btn-large">Logic tracer</a>-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <ul>
+              <li><a href="#">Home</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <p><a href="http://www.santhoshkumar.org">Santhosh Kumar</a> &copy; 2015, All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bargraph.js"></script>
+    <script src="js/bubblesort.js"></script>
+    <script src="js/selectionsort.js"></script>
+    <script src="js/insertionsort.js"></script>
+    <script src="js/shellsort.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
